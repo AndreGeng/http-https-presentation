@@ -5,6 +5,11 @@ HTTPS它是一个安全通信通道，它基于HTTP开发，用于在客户计�
 	![https](https://github.com/AndreGeng/http-https-presentation/blob/master/imgs/figure1.png?raw=true)
 </div>
 
+
+Notes:
+
+ssl 3.0 是tsl1.0的基础, 有人也把tsl1.0叫做ssl 3.1
+
 ---
 
 想要理解HTTPS, 需要理解几个概念:
@@ -25,21 +30,29 @@ Note:
 常见算法DES, 3DES, AES
 
 
-<div class="fragment">
-	<p>pros:</p>
-	<ul>
-		<li>算法相对简单, 加密速度快</li>
-	</ul>
-</div>
-<div class="fragment">
-	<p>cons:</p>
-	<ul>
-		<li>通信方式1对1, 大量密钥的管理与更新是个问题</li>
-	</ul>
-</div>
+<div>
+	<div style="display: inline-block; width:50%;">
+		<div class="fragment">
+			<p>pros:</p>
+			<ul>
+				<li>算法相对简单, 加密速度快</li>
+			</ul>
+		</div>
+		<div class="fragment">
+			<p>cons:</p>
+			<ul>
+				<li>通信方式1对1, 大量密钥的管理与更新是个问题</li>
+				<li>密钥的分发</li>
+			</ul>
+		</div>
 
-<div class="fragment">
-	公网环境下, 密钥如何的安全传输?
+		<div class="fragment">
+			公网环境下, 密钥如何的安全传输?
+		</div>
+	</div>
+	<div style="display: inline-block; width:50%;">
+		<img src="https://user-gold-cdn.xitu.io/2016/11/30/bd541d3c181738bf8f938bbd09967f05" alt="">
+	</div>
 </div>
 
 Note:
