@@ -1,6 +1,6 @@
 HTTPS
 
-![https](./imgs/figure1.png)
+![https](./imgs/figure1.png) |
 
 ---
 
