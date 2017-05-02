@@ -1,7 +1,7 @@
 HTTPS
 
-* haaha |
-* ![https](./imgs/figure1.png) |
+* haaha <!-- .element: class="fragment" -->
+* ![https](./imgs/figure1.png) <!-- .element: class="fragment" -->
 
 ---
 
