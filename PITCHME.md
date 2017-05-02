@@ -1,10 +1,8 @@
 HTTPS
 
+HTTPS它是一个安全通信通道，它基于HTTP开发，用于在客户计算机和服务器之间交换信息。它使用安全套接字层(SSL)进行信息交换，简单来说它是HTTP的安全版,是使用 TLS/SSL 加密的 HTTP 协议。
 <p class="fragment">
-	HTTPS它是一个安全通信通道，它基于HTTP开发，用于在客户计算机和服务器之间交换信息。它使用安全套接字层(SSL)进行信息交换，简单来说它是HTTP的安全版,是使用 TLS/SSL 加密的 HTTP 协议。
-</p>
-<p class="fragment">
-	![https](./imgs/figure1.png)
+	![https](imgs/figure1.png)
 </p>
 
 ---
