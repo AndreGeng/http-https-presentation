@@ -1,6 +1,6 @@
 HTTPS
 
-![https](./imgs/figure1.png) <!-- .element: class="fragment" -->
+* ![https](./imgs/figure1.png) |
 
 ---
 
