@@ -29,30 +29,25 @@ Note:
 
 常见算法DES, 3DES, AES
 
+<div class="fragment">
+	<p>pros:</p>
+	<ul>
+		<li>算法相对简单, 加密速度快</li>
+	</ul>
+</div>
+<div class="fragment">
+	<p>cons:</p>
+	<ul>
+		<li>
+			<p>通信方式1对1, 大量密钥的管理与更新是个问题</p>
+			<img src="https://user-gold-cdn.xitu.io/2016/11/30/bd541d3c181738bf8f938bbd09967f05" alt="">
+		</li>
+		<li>密钥的分发</li>
+	</ul>
+</div>
 
-<div>
-	<div style="display: inline-block; width:50%;">
-		<div class="fragment">
-			<p>pros:</p>
-			<ul>
-				<li>算法相对简单, 加密速度快</li>
-			</ul>
-		</div>
-		<div class="fragment">
-			<p>cons:</p>
-			<ul>
-				<li>通信方式1对1, 大量密钥的管理与更新是个问题</li>
-				<li>密钥的分发</li>
-			</ul>
-		</div>
-
-		<div class="fragment">
-			公网环境下, 密钥如何的安全传输?
-		</div>
-	</div>
-	<div style="display: inline-block; width:50%;">
-		<img src="https://user-gold-cdn.xitu.io/2016/11/30/bd541d3c181738bf8f938bbd09967f05" alt="">
-	</div>
+<div class="fragment">
+	公网环境下, 密钥如何的安全传输?
 </div>
 
 Note:
