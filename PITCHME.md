@@ -94,6 +94,8 @@ Note:
 	公网环境下, 密钥如何的安全传输?
 </div>
 
+<img src="./imgs/symmetric_encryption.png" alt="symmetric_encryption" />
+![symmetric_encryption](./imgs/symmetric_encryption.png)
 Note:
 
 DES使用的密钥key为8字节, 把64位的明文转成64位的密文.
