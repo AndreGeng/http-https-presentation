@@ -1,0 +1,21 @@
+.fragment.current-visible.visible:not(.current-fragment) {
+    display: none;
+    height:0px;
+    line-height: 0px;
+    font-size: 0px;
+}
+.pros-cons{
+  text-align: left;
+}
+.pros-cons ul{
+  list-style: none;
+  font-size: 20px;
+}
+
+.question {
+  color: red;
+}
+
+.figurefull{
+  width: 75%;
+}
