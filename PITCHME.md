@@ -47,9 +47,7 @@ HTTPS它是一个安全通信通道，它基于HTTP开发，用于在客户计�
 	<li>2006年和2008年，TLS进行了两次升级，分别为TLS 1.1版和TLS 1.2版。最新的变动是2011年TLS 1.2的修订版。</li>
 </ul>
 
-<div class="fragment">
-	![https](./imgs/https_overview.png)
-</div>
+![https](./imgs/https_overview.png) <!-- .element: class="fragment" -->
 
 
 Note:
