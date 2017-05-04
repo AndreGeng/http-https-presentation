@@ -173,7 +173,7 @@ Note:
 
 HTTPS通讯过程
 
-![HTTPS通讯过程](./imgs/https_handshake.png)
+![HTTPS通讯过程](./imgs/https_handshake.png) <!-- .element: class="figurefull" -->
 
 +++
 
