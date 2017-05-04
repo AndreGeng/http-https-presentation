@@ -84,8 +84,7 @@ Note:
 	<ul>
 		<li>
 			<p>通信方式1对1, 大量密钥的管理与更新是个问题</p>
-			<img src="./imgs/symmetric_encryption.png" alt="symmetric_encryption">
-			![symmetric_encryption](./imgs/symmetric_encryption.png)
+			<img src="./imgs/symmetric_encryption.png" alt="symmetric_encryption" />
 		</li>
 		<li>密钥的分发</li>
 	</ul>
