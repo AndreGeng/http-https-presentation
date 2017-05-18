@@ -3,8 +3,13 @@ HTTP认证与安全
 
 * 基本认证机制
 * digest认证
+* Bear Token认证
+* JWT
 * HTTPS
 
+Note:
+
+HOBA, Mutual, AWS4-HMAC-SHA256
 ---
 
 基本认证原理
@@ -15,6 +20,8 @@ Note:
 
 realm是RFC 2617里规定的,
 同一个realm里用户的用户名/密码是相同的
+
+定义在: RFC 7617
 
 ---
 
@@ -32,6 +39,141 @@ Note:
 
 服务端收到请求后将验证nonce是否过期，如果过期，那么直接返回401，即第二步的状态。如果没有过期，那么比较nc值，如果比前一次nc值小或者前一次根本没有存储的nc值，那么也将直接返回401状态。如果前面的验证都通过，那么服务端也将按照步骤3中计算最终HASH值的步骤计算出HASH值与客户端的进行比较，然后比较客户端提交过来的HASH值与服务端计算出来的HASH进行比较，不匹配返回401，匹配获取请求的数据并返回状态200。
 
++++
+
+![digest_req_res](./imgs/http_digest_req_res.png)
+
+---
+
+Bear Token认证
+
+Note:
+
+RFC 6750
+
+我認為它存在的目的是「示範一下 Token 的用法，並且定義下來，讓大家可以參考」，因為 OAuth 2.0 規格書沒有明確規定「Token 長什麼樣子」，甚至「Resource Server 如何拒絕非法的 Token」（指 API）都沒定義，只規定了怎麼拿取、怎麼撤銷、怎麼流通
+
++++
+
+OAuth 2.0
+
+1. 授权码模式 (authorization code)
+2. 简化模式 (implicit grant type)
+3. 密码模式 (resource owner password credentials)
+4. 客户端模式 (client credentials)
+
+Note:
+
+RFC 6749
+
+问题
+1. 为了后续的服务，会保存用户的密码，这样很不安全
+2. 用户没法限制第三方应用获得授权的范围和有效期
+3. 用户只有修改密码，才能收回赋予第三方的权力。但是这样做，会使得其他所有获得用户授权的第三方应用程序全部失效。
+4. 有一个第三方应用程序被破解，就会导致用户密码泄漏，以及所有被密码保护的数据泄漏
+
++++
+
+授权码模式
+
+<div style="display:flex;">
+  <div  style="flex: 1 1 auto;">
+    <img src="./imgs/authorization_code.png" alt="authorization_code">
+  </div>
+  <div style="width:100px;">
+    <p>A req: </p>
+    <ul>
+      <li>response_type</li>
+      <li>client_id</li>
+      <li>redirect_uri</li>
+      <li>scope</li>
+      <li>state</li>
+    </ul>
+  </div>
+</div>
+
+Note:
+微信scope参数中的snsapi_base(静默授权)和snsapi_userinfo(用户授权)
+
+1. response_type：表示授权类型，必选项，此处的值固定为"code"
+2. client_id：表示客户端的ID，必选项
+3. redirect_uri：表示重定向URI，可选项
+4. scope：表示申请的权限范围，可选项
+5. state：表示客户端的当前状态，可以指定任意值，认证服务器会原封不动地返回这个值
+
++++
+
+1. 简化模式
+  不需要第三方服务器, 没有授权码阶段
+2. 密码模式
+3. 客户端模式
+Note:
+
+密码模式:
+
+用户必须把自己的密码给客户端，但是客户端不得储存密码。这通常用在用户对客户端高度信任的情况下，比如客户端是操作系统的一部分，或者由一个著名公司出品
+
+---
+
+JWT (JSON WEB TOKEN)
+
+1. Header
+2. Payload
+3. Signature
+
+xxxxx.yyyyy.zzzzz
+
+Note:
+
+RFC 7519
+
++++
+
+header:
+```
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+```
+payload:
+```
+{
+  "sub": "1234567890",
+  "name": "John Doe",
+  "admin": true
+}
+```
+signature:
+```
+HMACSHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+  secret)
+```
+
++++
+
+```
+Authorization: Bearer <token>
+```
+<img src="./imgs/jwt.png" alt="" class="figurefull" />
+
+Note:
+
+我们为什么要使用json web token?
+pros:
+1. 利于横向扩展, 因为它是无状态的 (jwt/redis)
+2. session会有一个查找和反序列化的过程
+cons:
+1. jwt里不要存太多数据, 它比sessionID会大很多
+
+
+Note:
+
+payload:
+
+Reserved claims // iss (issuer), exp (expiration time), sub (subject), aud (audience), and others
 
 ---
 
